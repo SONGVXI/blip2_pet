@@ -1,0 +1,7 @@
+<environment_context>
+  <cwd>C:\Users\Vincent\Downloads\pet_blip2</cwd>
+  <shell>powershell</shell>
+  <current_date>2026-07-24</current_date>
+  <timezone>Asia/Shanghai</timezone>
+  <filesystem><workspace_roots><root>C:\Users\Vincent\Downloads\pet_blip2</root><root>C:\Users\Vincent\.codex\visualizations\2026\07\24\019f923c-f1fd-7953-87f1-c5cb71e2b48c</root></workspace_roots><permission_profile type="managed"><file_system type="restricted"><entry access="read"><special>:root</special></entry><entry access="write"><path>C:\Users\Vincent\Downloads\pet_blip2</path></entry><entry access="write"><path>C:\Users\Vincent\.codex\visualizations\2026\07\24\019f923c-f1fd-7953-87f1-c5cb71e2b48c</path></entry><entry access="write"><special>:slash_tmp</special></entry><entry access="write"><special>:tmpdir</special></entry><entry access="read"><path>C:\Users\Vincent\Downloads\pet_blip2\.git</path></entry><entry access="read"><path>C:\Users\Vincent\.codex\visualizations\2026\07\24\019f923c-f1fd-7953-87f1-c5cb71e2b48c\.git</path></entry><entry access="read"><path>C:\Users\Vincent\Downloads\pet_blip2\.agents</path></entry><entry access="read"><path>C:\Users\Vincent\.codex\visualizations\2026\07\24\019f923c-f1fd-7953-87f1-c5cb71e2b48c\.agents</path></entry><entry access="read"><path>C:\Users\Vincent\Downloads\pet_blip2\.codex</path></entry><entry access="read"><path>C:\Users\Vincent\.codex\visualizations\2026\07\24\019f923c-f1fd-7953-87f1-c5cb71e2b48c\.codex</path></entry></file_system></permission_profile></filesystem>
+</environment_context>
