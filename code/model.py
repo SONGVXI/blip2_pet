@@ -8,6 +8,8 @@ import torch
 from torch import Tensor, nn
 from torchvision.models import ResNet18_Weights, resnet18
 
+from text_encoder import TextEncoder
+
 
 NUM_CLASSES = 10
 IMAGE_FEATURE_DIM = 512
@@ -105,5 +107,42 @@ class FusionClassifier(nn.Module):
             )
 
         image_features = self.image_encoder(images)
+        fused_features = torch.cat((image_features, text_features), dim=1)
+        return self.classifier(fused_features)
+
+
+class ImageTextFusionClassifier(nn.Module):
+    """ResNet-18 图像特征与 GRU 文本特征的多模态分类器。"""
+
+    def __init__(
+        self,
+        text_encoder: TextEncoder,
+        num_classes: int = NUM_CLASSES,
+        pretrained: bool = True,
+    ) -> None:
+        super().__init__()
+        self.image_encoder = ImageEncoder(pretrained=pretrained)
+        self.text_encoder = text_encoder
+
+        fusion_dim = self.image_encoder.output_dim + text_encoder.output_dim
+        self.classifier = nn.Sequential(
+            nn.Linear(fusion_dim, 256),
+            nn.ReLU(),
+            nn.Linear(256, num_classes),
+        )
+
+    def forward(
+        self,
+        images: Tensor,
+        caption_tokens: Tensor | list[str],
+    ) -> Tensor:
+        """输入图像和 caption tokens，输出 [batch_size, num_classes]。"""
+
+        image_features = self.image_encoder(images)
+        text_features = self.text_encoder(caption_tokens)
+
+        if image_features.shape[0] != text_features.shape[0]:
+            raise ValueError("image 和 caption_tokens 的 batch size 必须一致。")
+
         fused_features = torch.cat((image_features, text_features), dim=1)
         return self.classifier(fused_features)
