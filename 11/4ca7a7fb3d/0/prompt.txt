@@ -1,0 +1,22 @@
+<recommended_plugins>
+Here is a list of plugins that are available but not installed.
+
+- Atlassian Rovo (atlassian-rovo@openai-curated-remote)
+- Box (box@openai-curated-remote)
+- Figma (figma@openai-curated-remote)
+- GitHub (github@openai-curated-remote)
+- Notion (notion@openai-curated-remote)
+- Outlook Calendar (outlook-calendar@openai-curated-remote)
+- Outlook Email (outlook-email@openai-curated-remote)
+- SharePoint (sharepoint@openai-curated-remote)
+- Slack (slack@openai-curated-remote)
+- Teams (teams@openai-curated-remote)
+</recommended_plugins>
+
+<environment_context>
+  <cwd>C:\Users\Vincent\Downloads\pet_blip2</cwd>
+  <shell>powershell</shell>
+  <current_date>2026-07-24</current_date>
+  <timezone>Asia/Shanghai</timezone>
+  <filesystem><workspace_roots><root>C:\Users\Vincent\Downloads\pet_blip2</root></workspace_roots><permission_profile type="managed"><file_system type="restricted"><entry access="read"><special>:root</special></entry><entry access="write"><path>C:\Users\Vincent\Downloads\pet_blip2</path></entry><entry access="write"><special>:slash_tmp</special></entry><entry access="write"><special>:tmpdir</special></entry><entry access="write"><path>C:\Users\Vincent\.codex\visualizations\2026\07\24\019f9238-e4bd-7122-b8c8-b682d94ba225</path></entry><entry access="read"><path>C:\Users\Vincent\Downloads\pet_blip2\.git</path></entry><entry access="read"><path>C:\Users\Vincent\Downloads\pet_blip2\.agents</path></entry><entry access="read"><path>C:\Users\Vincent\Downloads\pet_blip2\.codex</path></entry></file_system></permission_profile></filesystem>
+</environment_context>
