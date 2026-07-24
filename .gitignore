@@ -1,0 +1,79 @@
+# ********************
+# BLIP-2 图文多模态宠物品种识别项目
+# Stage 1: Git 忽略规则
+# ********************
+
+# ------------------ Python 编译产物 ------------------
+__pycache__/
+*.py[cod]
+*$py.class
+*.so
+.Python
+
+# ------------------ 虚拟环境 ------------------
+env/
+venv/
+ENV/
+.venv/
+
+# ------------------ 打包与分发 ------------------
+build/
+develop-eggs/
+dist/
+downloads/
+eggs/
+.eggs/
+lib/
+lib64/
+parts/
+sdist/
+var/
+wheels/
+*.egg-info/
+.installed.cfg
+*.egg
+
+# ------------------ PyTorch 模型文件 ------------------
+#   模型权重文件较大，不提交到 Git
+*.pth
+*.pt
+*.ckpt
+*.checkpoint
+
+# ------------------ 数据与运行时产物 ------------------
+#   data/: 原始 Oxford-IIIT Pet 数据集（torchvision 自动下载）
+#   captions/: BLIP-2 生成的 caption JSON 文件
+#   checkpoints/: 训练过程中保存的模型权重
+#   results/: 评估结果 JSON、混淆矩阵图片
+#   logs/: TensorBoard 日志文件
+data/
+captions/
+checkpoints/
+results/
+logs/
+
+# ------------------ 实验报告 ------------------
+#   report/: 报告中的图片、图表等中间产物
+#   report/report.md 作为项目文档保留，不忽略
+report/*.png
+report/*.jpg
+report/*.pdf
+
+# ------------------ IDE 配置 ------------------
+.vscode/
+.idea/
+*.swp
+*.swo
+*~
+
+# ------------------ Jupyter Notebook ------------------
+.ipynb_checkpoints/
+
+# ------------------ 系统文件 ------------------
+.DS_Store
+Thumbs.db
+
+# ------------------ 临时文件 ------------------
+*.tmp
+*.log
+*.bak
