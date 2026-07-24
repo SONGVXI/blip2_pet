@@ -137,6 +137,7 @@ def load_pet_datasets(
         transform = transforms.ToTensor()
 
     data_root = Path(root)
+    print(str(data_root))
     trainval_source = OxfordIIITPet(
         root=str(data_root),
         split="trainval",
