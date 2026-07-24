@@ -10,6 +10,8 @@ torchvision>=0.14.0
 # ------------------ HuggingFace Transformers ------------------
 #   BLIP-2 模型加载与推理
 transformers>=4.30.0
+accelerate>=0.26.0
+bitsandbytes>=0.43.0
 
 # ------------------ 图像处理 ------------------
 Pillow>=9.0.0
