@@ -19,8 +19,8 @@ from model import ImageOnlyClassifier, ImageTextFusionClassifier
 from text_encoder import TextEncoder
 
 
-DEFAULT_EPOCHS = 8
-DEFAULT_BATCH_SIZE = 16
+DEFAULT_EPOCHS = 12
+DEFAULT_BATCH_SIZE = 32
 DEFAULT_LEARNING_RATE = 1e-3
 NUM_CLASSES = 10
 
@@ -448,19 +448,21 @@ def main() -> None:
         "data_root": project_root / "data",
         "seed": args.seed,
     }
-    if args.model == "fusion":
-        train_fusion(
-            **common_args,
-            captions_path=project_root / "captions" / "captions.json",
-            checkpoint_path=project_root / "checkpoints" / "fusion_best.pth",
-            log_path=project_root / "logs" / "fusion_train.csv",
-        )
-    else:
-        train(
-            **common_args,
-            checkpoint_path=project_root / "checkpoints" / "image_only_best.pth",
-            log_path=project_root / "logs" / "image_only_train.csv",
-        )
+    # if args.model == "image-only":
+    train(
+        **common_args,
+        checkpoint_path=project_root / "checkpoints" / "image_only_best.pth",
+        log_path=project_root / "logs" / "image_only_train.csv",
+    )
+    # else args.model == "fusion":
+    args.model = "fusion"
+    train_fusion(
+        **common_args,
+        captions_path=project_root / "captions" / "captions.json",
+        checkpoint_path=project_root / "checkpoints" / "fusion_best.pth",
+        log_path=project_root / "logs" / "fusion_train.csv",
+    )
+    
 
 
 if __name__ == "__main__":
