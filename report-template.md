@@ -295,7 +295,7 @@ caption 能够提供动物类型和场景信息，但没有稳定地提供准确
 ## 12. AI 对话过程记录
 
 - 录制工具：entire.io
-- 对话链接：
+- 对话链接：(https://github.com/SONGVXI/blip2_pet/tree/entire/checkpoints/v1)
 - 使用的 AI 模型：GPT 5.6 Luna
 - 累计对话时长 / 会话数：总计约4h
 
@@ -307,12 +307,26 @@ AI 主要协助完成项目目录初始化、数据读取、BLIP-2 caption gener
 
 ## 13. Git 提交记录
 
-- 仓库地址：
-- 总 commit 数：
+- 仓库地址：https://github.com/SONGVXI/blip2_pet.git
+- 总 commit 数：15
 
 粘贴 `git log --oneline` 输出：
 
 ```text
-（在这里粘贴 git log --oneline）
+2a0b760 (HEAD -> main) feat：添加实验报告
+8c148b4 feat：增加增强方法：RandomResizedCrop和RandomHorizontalFlip
+5429e5a feat： 绘制image-only 和多模态模型的 loss 曲线、accuracy 曲线并且保存到results/下，同时在train.py下能够一次完成两个模型的训练
+b0f9de3 feat：完成评估函数并且生成结果
+24d325e feat：把 BLIP-2 改为 4-bit 量化加载，否则4060显卡会崩溃导致无法完成450个caption的生成，同时在train.py文件里面完成image-text fusion训练。
+cae8421 feat：在model.py文件里面添加图文多模态分类器
+f191a53 feat：添加text encoder
+6824efc feat：完成image-only训练
+5bc54a9 feat：训练image-only模型
+4a71331 feat：使用blip2生产captions
+4b3c46d “feat：数据集读取”
+86c8e50 feat: 训练image-only模型
+9c9ff75 feat: implement ResNet18 image classifier
+93e88dd feat: 使用 BLIP-2 生成并保存 caption
+739ae29 (origin/main) Initial commit
 ```
 
