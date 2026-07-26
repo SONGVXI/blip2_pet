@@ -134,7 +134,10 @@ def load_pet_datasets(
     """
 
     if transform is None:
-        transform = transforms.ToTensor()
+        transform = transforms.Compose([transforms.RandomResizedCrop(224),
+                                        transforms.RandomHorizontalFlip(0.5),
+                                        transforms.ToTensor()])
+        print("正在运行图像增强变换")
 
     data_root = Path(root)
     print(str(data_root))
@@ -152,7 +155,7 @@ def load_pet_datasets(
         transform=transform,
         download=download,
     )
-
+    
     class_to_label = {name: label for label, name in enumerate(SELECTED_CLASSES)}
     trainval_records = _build_records(
         trainval_source, class_to_label, TRAIN_PER_CLASS + VALIDATION_PER_CLASS, seed

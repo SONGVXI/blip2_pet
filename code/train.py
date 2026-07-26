@@ -39,6 +39,8 @@ def build_image_transform() -> transforms.Compose:
 
     return transforms.Compose(
         [
+            transforms.RandomResizedCrop(224),
+            transforms.RandomHorizontalFlip(0.5),
             transforms.Resize((224, 224)),
             transforms.ToTensor(),
             transforms.Normalize(
